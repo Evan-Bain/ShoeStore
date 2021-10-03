@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+
+    <data>
+        <variable
+            name="instructions"
+            type="com.udacity.shoestore.InstructionsFragment"/>
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+       tools:layout="@layout/fragment_instructions"
+        tools.context="com.udacity.shoestore.navigation.InstructionsFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp">
+
+    <TextView
+        android:id="@+id/instructions_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        android:layout_marginBottom="89dp"
+        android:text="@string/instructions"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/instruction_detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/instruction_detail"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="392dp"
+        android:text="@string/tap_the_button_to_check_out_our_inventory_of_new_and_used_shoes_you_can_also_add_your_own_shoes_for_consignment_sale_we_offer_an_80_20_consignment_split_the_best_in_the_industry"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/instructions_header" />
+
+    <Button
+        android:id="@+id/view_list_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Check out Our Shoes!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/instruction_detail" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
