@@ -24,10 +24,10 @@ class InstructionsFragment : Fragment() {
             false
         )
 
+        //navigate to Shoe List
         binding.viewListButton.setOnClickListener{ view: View ->
             view.findNavController().navigate(R.id.action_instructionsFragment_to_shoeListFragment)
         }
-
 
         return binding.root
     }

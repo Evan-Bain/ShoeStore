@@ -10,14 +10,12 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
-import kotlinx.android.synthetic.main.fragment_shoe_list.view.*
-import kotlinx.android.synthetic.main.fragment_shoe_list.view.shoe_brand_text_view
-import kotlinx.android.synthetic.main.fragment_shoe_list.view.shoe_style_text_view
+import kotlinx.android.synthetic.main.fragment_shoe_detail.view.*
 import kotlinx.android.synthetic.main.shoe_list_item.view.*
 
 class ShoeListFragment : Fragment() {
 
-    //Create instance of viewmodel
+    //Create instance of viewmodel.
     private val sharedViewModel: ShoeViewModel by activityViewModels()
 
     //create binding object. (Why is this lateinit?)
@@ -37,12 +35,21 @@ class ShoeListFragment : Fragment() {
         )
 
         binding.setLifecycleOwner(this)
-        //Observe the list in the viewmodel and inflate/add a new shoe_list_item view whenever a new shoe is added.
+        //Observe the list in the ViewModel and inflate/add a new shoe_list_item view whenever a new shoe is added.
             sharedViewModel.shoeList.observe(viewLifecycleOwner,
-                Observer { sampleShoeList -> sampleShoeList.forEach {shoeNameT ->
+                Observer { shoeList -> shoeList.forEach {shoe ->
                 val view: View = inflater.inflate(R.layout.shoe_list_item, null, false)
-                view.shoe_brand_text_view.text = shoeNameT.name
-                    view.shoe_style_text_view.text = shoeNameT.style
+                view.shoe_brand_text_view.text =
+                    String.format(getString(R.string.brand_name), shoe.brand)
+                view.shoe_type_text_view.text =
+                    String.format(getString(R.string.type_name), shoe.type)
+                view.size_group_text_view.text =
+                    String.format(getString(R.string.size_grouping), shoe.sizeGroup)
+                view.shoe_size_text_view.text =
+                    String.format(getString(R.string.shoe_size), shoe.size)
+                view.shoe_description_text_view.text =
+                    String.format(getString(R.string.description), shoe.description)
+                view.line_divider
                 binding.shoeList.addView(view)
             }
                 })
@@ -51,7 +58,6 @@ class ShoeListFragment : Fragment() {
         binding.fab.setOnClickListener {view: View ->
             view.findNavController().navigate(R.id.action_shoeListFragment_to_shoeDetailFragment)
         }
-
         return binding.root
     }
 }

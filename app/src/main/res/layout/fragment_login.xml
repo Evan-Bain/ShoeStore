@@ -2,8 +2,7 @@
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools.context="com.udacity.shoestore.navigation.LoginFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
         <variable
@@ -12,13 +11,15 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/fragment_login"
+        tools.context="com.udacity.shoestore.navigation.LoginFragment"
+    android:id="@+id/fragment_login"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingLeft="@dimen/fragment_horizontal_margin"
         android:paddingTop="@dimen/fragment_vertical_margin"
         android:paddingRight="@dimen/fragment_horizontal_margin"
-        android:paddingBottom="@dimen/fragment_vertical_margin">
+        android:paddingBottom="@dimen/fragment_vertical_margin"
+        android:background="@color/colorPrimaryDark">
 
 
         <EditText
@@ -29,6 +30,8 @@
             android:layout_marginTop="96dp"
             android:layout_marginEnd="24dp"
             android:hint="@string/prompt_email"
+            android:fontFamily="sans-serif-medium"
+            android:textColorHint="@android:color/white"
             android:inputType="textEmailAddress"
             android:selectAllOnFocus="true"
             app:layout_constraintEnd_toEndOf="parent"
@@ -44,6 +47,8 @@
             android:layout_marginEnd="24dp"
             android:hint="@string/prompt_password"
             android:imeActionLabel="@string/action_sign_in_short"
+            android:fontFamily="sans-serif-medium"
+            android:textColorHint="@android:color/white"
             android:imeOptions="actionDone"
             android:inputType="textPassword"
             android:selectAllOnFocus="true"
@@ -53,35 +58,28 @@
 
         <Button
             android:id="@+id/register_button"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:layout_marginStart="48dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="64dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="32dp"
             android:text="@string/action_register"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textAllCaps="false"
             app:layout_constraintEnd_toStartOf="@+id/login_button"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/password"
-            app:layout_constraintVertical_bias="0.15" />
+            app:layout_constraintTop_toBottomOf="@+id/password" />
 
         <Button
             android:id="@+id/login_button"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_gravity="start"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="48dp"
-            android:layout_marginBottom="64dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="64dp"
             android:text="@string/action_sign_in"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textAllCaps="false"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/password"
-            app:layout_constraintVertical_bias="0.157" />
+            app:layout_constraintTop_toBottomOf="@+id/password" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

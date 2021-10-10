@@ -1,65 +1,201 @@
-<?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    >
+<?xml version="1.0" encoding="utf-8"?><layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
     <data>
+
         <variable
             name="shoeDetail"
-            type="com.udacity.shoestore.ShoeNameT"/>
+            type="com.udacity.shoestore.Shoe" />
     </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark" >
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/text"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools.context="com.udacity.shoestore.navigation.ShoeDetailFragment"
-    >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/editTextBrandName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="99dp"
-        android:ems="10"
-        android:hint="@string/enter_the_brand_name"
-        android:text="@={shoeDetail.name}"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/add_shoe_button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                app:columnCount="2"
+                app:rowCount="5">
 
-    <EditText
-        android:id="@+id/editTextStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="99dp"
-        android:ems="10"
-        android:hint="Enter the style"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        android:text="@={shoeDetail.style}"
-        app:layout_constraintBottom_toTopOf="@+id/add_shoe_button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.771" />
+                <TextView
+                    android:id="@+id/brand_name_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/brand_header"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    app:layout_column="0"
+                    app:layout_row="0" />
 
-    <Button
-        android:id="@+id/add_shoe_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/add_a_new_shoe"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+                <EditText
+                    android:id="@+id/brand_name_edit_text"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:hint="@string/enter_the_brand_name"
+                    android:importantForAutofill="no"
+                    android:inputType="textPersonName"
+                    android:text="@={shoeDetail.brand}"
+                    android:textColorHint="@android:color/darker_gray"
+                    app:layout_column="1"
+                    app:layout_row="0" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/type_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/type_header"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    app:layout_column="0"
+                    app:layout_row="1" />
+
+                <EditText
+                    android:id="@+id/type_edit_text"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:hint="Enter the type of shoe"
+                    android:importantForAutofill="no"
+                    android:inputType="textPersonName"
+                    android:text="@={shoeDetail.type}"
+                    android:textColorHint="@android:color/darker_gray"
+                    app:layout_column="1"
+                    app:layout_row="1" />
+
+                <TextView
+                    android:id="@+id/size_grouping_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/size_group_header"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    app:layout_column="0"
+                    app:layout_row="2" />
+
+                <EditText
+                    android:id="@+id/size_group_edit_text"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:hint="Men, Women, or Children?"
+                    android:inputType="text"
+                    android:text="@={shoeDetail.sizeGroup}"
+                    android:textColorHint="@android:color/darker_gray"
+                    app:layout_column="1"
+                    app:layout_row="2"/>
+
+                <TextView
+                    android:id="@+id/size_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/size_header"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    app:layout_column="0"
+                    app:layout_row="3" />
+
+                <EditText
+                    android:id="@+id/size_edit_text"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:hint="Enter the size"
+                    android:inputType="numberDecimal"
+                    android:text="@={shoeDetail.size}"
+                    android:textColorHint="@android:color/darker_gray"
+                    app:layout_column="1"
+                    app:layout_row="3" />
+                <TextView
+                    android:id="@+id/description_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/description_header"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    app:layout_column="0"
+                    app:layout_row="4"/>
+
+                <EditText
+                    android:id="@+id/description_edit_text"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:capitalize="sentences"
+                    android:fontFamily="sans-serif-medium"
+                    android:hint="Enter a detailed description"
+                    android:imeOptions="flagNavigateNext"
+                    android:text="@={shoeDetail.description}"
+                    android:textColorHint="@android:color/darker_gray"
+                    app:layout_column="1"
+                    app:layout_row="4" />
+            </androidx.gridlayout.widget.GridLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/cancel_button"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="200dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/cancel"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white" />
+                <Button
+                    android:id="@+id/add_shoe_button"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="200dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/add_a_new_shoe"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
 </layout>

@@ -18,7 +18,7 @@
         tools.context="com.udacity.shoestore.navigation.InstructionsFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="16dp">
+        android:background="@color/colorPrimaryDark">
 
     <TextView
         android:id="@+id/instructions_header"
@@ -27,29 +27,39 @@
         android:layout_marginTop="88dp"
         android:layout_marginBottom="89dp"
         android:text="@string/instructions"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="48sp"
+      android:textColor="@android:color/white"
+        android:fontFamily="sans-serif-medium"
+       android:textSize="32sp"
         app:layout_constraintBottom_toTopOf="@+id/instruction_detail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/instruction_detail"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="392dp"
-        android:text="@string/tap_the_button_to_check_out_our_inventory_of_new_and_used_shoes_you_can_also_add_your_own_shoes_for_consignment_sale_we_offer_an_80_20_consignment_split_the_best_in_the_industry"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/instructions_header" />
+        <TextView
+            android:id="@+id/instruction_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="392dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/tap_the_button_to_check_out_our_inventory_of_new_and_used_shoes_you_can_also_add_your_own_shoes_for_consignment_sale_we_offer_an_80_20_consignment_split_the_best_in_the_industry"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/instructions_header" />
 
     <Button
         android:id="@+id/view_list_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Check out Our Shoes!"
+        android:textAllCaps="false"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:background="#B4E8B2"
+        android:textColor="@android:color/white"
+        android:fontFamily="sans-serif-medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

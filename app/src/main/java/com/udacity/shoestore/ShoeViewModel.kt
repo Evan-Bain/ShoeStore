@@ -6,35 +6,33 @@ import androidx.lifecycle.ViewModel
 
 class ShoeViewModel : ViewModel() {
     //LiveData object for an individual shoe
-    private val _shoeNameT = MutableLiveData<ShoeNameT>()
-    val shoeNameT: LiveData<ShoeNameT>
-        get() = _shoeNameT
+    private val _shoe = MutableLiveData<Shoe>()
+    val shoe: LiveData<Shoe>
+        get() = _shoe
 
-    //MutableList of ShoeNameT LiveData objects.
-    private var _shoeList = MutableLiveData<MutableList<ShoeNameT>>()
-    val shoeList: MutableLiveData<MutableList<ShoeNameT>>
+    //MutableList of LiveData Shoe objects.
+    private var _shoeList = MutableLiveData<MutableList<Shoe>>()
+    val shoeList: MutableLiveData<MutableList<Shoe>>
         get() = _shoeList
 
-
     init {
-        //Sets the initial value of the shoeName
-        _shoeNameT.value = ShoeNameT("", style = "")
-                //Runs the shoeList function below.
-        _shoeList.value = shoeList()
+        //Sets the initial value of the shoeList
+     _shoe.value = Shoe("", type = "", sizeGroup = "", size = "", description = "" )
+      _shoeList.value = shoeList()
 
     }
 
     //This method executes when the user clicks on the AddANewShoe button in the detail fragment.
-    //It sets the value of the shoe name that was entered and adds it to the MutableList.
-    fun addShoe(shoeInfo: ShoeNameT) {
-        _shoeNameT.value = shoeInfo
-        _shoeList.value?.add(_shoeNameT.value!!)
+    //It sets the values in the shoe that was entered and adds it to the MutableList.
+    fun addShoe(shoeInfo: Shoe) {
+        _shoe.value = shoeInfo
+        _shoeList.value?.add(_shoe.value!!)
     }
 
-    //This function returns the list of shoes.
-    private fun shoeList(): MutableList<ShoeNameT> {
+    //This function returns the list of shoes with initial sample values.
+    private fun shoeList(): MutableList<Shoe> {
      return mutableListOf(
-     ShoeNameT("", style = ""))
+     Shoe("Nike", type = "Basketball", sizeGroup = "Women's", size = "8.5", description = "Black Kyrie 5"))
 
     }
 

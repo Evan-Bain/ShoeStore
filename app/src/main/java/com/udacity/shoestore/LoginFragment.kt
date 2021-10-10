@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.udacity.shoestore.databinding.FragmentLoginBinding
 
-
 class LoginFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,10 +24,12 @@ class LoginFragment : Fragment() {
             false
         )
 
+        //Fake login button navigates to welcome screen
         binding.loginButton.setOnClickListener {view: View ->
             view.findNavController().navigate(R.id.action_loginFragment_to_welcomeFragment)
         }
 
+        //Fake register button also navigates to welcome screen
         binding.registerButton.setOnClickListener {view: View ->
             view.findNavController().navigate(R.id.action_loginFragment_to_welcomeFragment)
         }
