@@ -6,25 +6,10 @@
     <string name="action_sign_in">Sign in</string>
     <string name="action_register">Register</string>
     <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome!"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
-    <string name="welcome_text">Sally\'s Shoe Marketplace is the ONLY online marketplace that is limited to shoes. It\'s free to sign up, with no cost for buyers and minimal costs for sellers. Whether you\'re looking for the latest designer styles or classic vintage pairs, you\'ll find what you\'re looking for at Sally\'s.</string>
+    <string name="welcome_text">Sally\'s Shoe Marketplace is the only online marketplace that\'s just for shoes. It\'s free to sign up, with no cost for buyers and minimal costs for sellers. Whether you\'re looking for the latest designer styles or classic vintage pairs, you\'ll find what you\'re looking for at Sally\'s.</string>
     <string name="welcome_header">Welcome to Sally\'s Shoe Marketplace</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="instructions">Instructions</string>
-    <string name="tap_the_button_to_check_out_our_inventory_of_new_and_used_shoes_you_can_also_add_your_own_shoes_for_consignment_sale_we_offer_an_80_20_consignment_split_the_best_in_the_industry">Tap the button to check out our inventory of new and used shoes. You can also add your own shoes for consignment sale. We offer an 80-20 consignment split - the best in the industry!</string>
-    <string name="title_activity_main2">MainActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="instructions">Tap the button to check out our inventory of new and used shoes. You can also add your own shoes for consignment sale. We offer an 80-20 consignment split - the best in the industry!</string>
     <string name="enter_the_brand_name">Enter the brand name</string>
     <string name="add_a_new_shoe">Add Shoes</string>
     <string name="brand_name">Brand Name: %1$s</string>
@@ -38,4 +23,12 @@
     <string name="size_group_header">Size Group:</string>
     <string name="size_header">Size:</string>
     <string name="description_header">Description:</string>
+    <string name="learn_more">Learn More</string>
+    <string name="view_list_button_text">Check out Our Shoes!</string>
+    <string name="log_out">Log Out</string>
+    <string name="instructions_header">Instructions</string>
+    <string name="shoe_type_hint">Enter the type of shoe</string>
+    <string name="size_group_hint">Men, Women, or Children?</string>
+    <string name="size_hint">Enter the size</string>
+    <string name="description_hint">Enter a detailed description</string>
 </resources>

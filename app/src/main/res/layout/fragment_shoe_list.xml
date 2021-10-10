@@ -11,6 +11,10 @@
             type="com.udacity.shoestore.ShoeViewModel" />
     </data>
 
+    <!-- LinearLayout chosen as required by the project rubric.
+        Contained in ConstraintLayout for ease/adaptability of positioning the FAB.-->
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         tools.context="com.udacity.shoestore.navigation.ShoeListFragment"
         android:layout_width="match_parent"

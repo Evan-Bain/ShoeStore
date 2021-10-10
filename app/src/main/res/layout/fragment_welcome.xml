@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -11,57 +12,69 @@
             type="com.udacity.shoestore.WelcomeFragment"/>
     </data>
 
+    <!-- ConstraintLayout chosen for ease in spacing these views in a flat hierarchy that adapts to multiple screen sizes.-->
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/fragment_welcome"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout="@layout/fragment_welcome"
-        android:background="@color/colorPrimaryDark">
+        android:background="@color/colorPrimaryDark"
+        tools:layout="@layout/fragment_welcome">
+
 
         <TextView
             android:id="@+id/welcome_header_textview"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="153dp"
-            android:padding="16dp"
-            android:textColor="@android:color/white"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="128dp"
+            android:layout_marginEnd="16dp"
             android:fontFamily="sans-serif-medium"
+            android:padding="16dp"
             android:text="@string/welcome_header"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textSize="22sp"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="@string/welcome_header" />
 
-
         <TextView
             android:id="@+id/welcome_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="32dp"
+            android:fontFamily="sans-serif-medium"
             android:padding="16dp"
             android:text="@string/welcome_text"
             android:textColor="@android:color/white"
-            android:fontFamily="sans-serif-medium"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/learn_more_button"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/welcome_header_textview"
+            app:layout_constraintVertical_bias="0.0" />
 
         <Button
             android:id="@+id/learn_more_button"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="133dp"
-            android:text="Learn More"
+            android:layout_marginBottom="252dp"
+            android:background="@drawable/round_corner_button"
+            android:padding="@dimen/button_padding"
+            android:text="@string/learn_more"
             android:textAllCaps="false"
+            android:textColor="@android:color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/welcome_textview"
-            app:layout_constraintVertical_bias="0.865" />
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

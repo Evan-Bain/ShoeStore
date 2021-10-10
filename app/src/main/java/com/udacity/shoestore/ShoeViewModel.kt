@@ -17,8 +17,8 @@ class ShoeViewModel : ViewModel() {
 
     init {
         //Sets the initial value of the shoeList
-     _shoe.value = Shoe("", type = "", sizeGroup = "", size = "", description = "" )
-      _shoeList.value = shoeList()
+        _shoe.value = Shoe("", type = "", sizeGroup = "", size = "", description = "")
+        _shoeList.value = shoeList()
 
     }
 
@@ -31,8 +31,15 @@ class ShoeViewModel : ViewModel() {
 
     //This function returns the list of shoes with initial sample values.
     private fun shoeList(): MutableList<Shoe> {
-     return mutableListOf(
-     Shoe("Nike", type = "Basketball", sizeGroup = "Women's", size = "8.5", description = "Black Kyrie 5"))
+        return mutableListOf(
+            Shoe(
+                "Nike",
+                type = "Basketball",
+                sizeGroup = "Women's",
+                size = "8.5",
+                description = "Black Kyrie 5"
+            )
+        )
 
     }
 
