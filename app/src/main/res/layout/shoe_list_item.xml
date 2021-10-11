@@ -9,6 +9,8 @@
             name="shoe"
             type="com.udacity.shoestore.Shoe" />
     </data>
+    <!--Honestly I just chose ConstraintLayout here because it was the default and the layout would have been
+    very simple to create either as ConstraintLayout or LinearLayout.-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
