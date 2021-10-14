@@ -11,14 +11,16 @@ class ShoeViewModel : ViewModel() {
         get() = _shoe
 
     //MutableList of LiveData Shoe objects.
-    private var _shoeList = MutableLiveData<MutableList<Shoe>>()
-    val shoeList: MutableLiveData<MutableList<Shoe>>
-        get() = _shoeList
+    /*private var _shoeList = MutableLiveData<ArrayList<Shoe>>()
+    val shoeList: LiveData<ArrayList<Shoe>>
+        get() = _shoeList*/
+
+    val shoelist = ArrayList<Shoe>()
 
     init {
         //Sets the initial value of the shoeList
         _shoe.value = Shoe("", type = "", sizeGroup = "", size = "", description = "")
-        _shoeList.value = shoeList()
+        //_shoeList.value = shoeList()
 
     }
 
@@ -26,11 +28,11 @@ class ShoeViewModel : ViewModel() {
     //It sets the values in the shoe that was entered and adds it to the MutableList.
     fun addShoe(shoeInfo: Shoe) {
         _shoe.value = shoeInfo
-        _shoeList.value?.add(_shoe.value!!)
+        shoelist.add(shoe.value!!)
     }
 
     //This function returns the list of shoes with initial sample values.
-    private fun shoeList(): MutableList<Shoe> {
+    /*private fun shoeList(): MutableList<Shoe> {
         return mutableListOf(
             Shoe(
                 "Nike",
@@ -41,6 +43,6 @@ class ShoeViewModel : ViewModel() {
             )
         )
 
-    }
+    }*/
 
 }

@@ -31,11 +31,11 @@ class ShoeListFragment : Fragment() {
 
         setHasOptionsMenu(true)
 
-        binding.setLifecycleOwner(this)
+          binding.setLifecycleOwner(this)
         //Observe the list in the ViewModel and inflate/add a new shoe_list_item view whenever a new shoe is added.
-        sharedViewModel.shoeList.observe(viewLifecycleOwner,
-            Observer { shoeList ->
-                shoeList.forEach { shoe ->
+        sharedViewModel.shoe.observe(viewLifecycleOwner,
+            Observer {
+                sharedViewModel.shoelist.forEach { shoe ->
                     val view: View = inflater.inflate(R.layout.shoe_list_item, null, false)
                     view.shoe_brand_text_view.text =
                         String.format(getString(R.string.brand_name), shoe.brand)
